@@ -1,17 +1,21 @@
 import express from 'express';
-import QRCode from "qrcode";
-import multer from "multer";
-import path from "path";
+import dotenv from "dotenv";
+import cors from "cors";
+import connectDB from "./config/db";
+import fileRoutes from "./routes/fileRoutes"
 
+dotenv.config();
 const app = express();
-app.use(express.json());
 
+connectDB();
+app.use(cors());
+app.use(express.json());
+app.use("/uploads", express.static("uploads")); // serve uplaoded file
+app.use("/api/files", fileRoutes)
 // HOME ROUTE
 
-app.get("/", (req, res) =>{
-    res.send("✅ QR Code Generator API IS RUNNING!");
-});
 
 
-const PORT = 3000;
+
+const PORT = process.env.PORT ||  3000;
 app.listen(PORT, () => console.log(`🚀 Server running on http://localhost:${PORT}`));
