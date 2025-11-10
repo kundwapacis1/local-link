@@ -1,10 +1,11 @@
-import file from "../models/file";
+import file from "../models/file.js";
 export const uploadFile = async (req, res) =>{
     try {
         const file = new File({
             filename: req.file.originalname,
             path: req.file.path,
-            size: req.file.size
+            size: req.file.size,
+            mimetype: req.file.mimetype
         });
         await file.save();
         res.status(201).json({message: "file uploaded successfully", file});

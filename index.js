@@ -1,8 +1,9 @@
 import express from 'express';
 import dotenv from "dotenv";
 import cors from "cors";
-import connectDB from "./config/db";
-import fileRoutes from "./routes/fileRoutes"
+import connectDB from "./config/db.js";
+import fileRoutes from "./routes/fileRoutes.js"
+import textRoutes from "./routes/textRoutes.js";
 
 dotenv.config();
 const app = express();
@@ -12,6 +13,7 @@ app.use(cors());
 app.use(express.json());
 app.use("/uploads", express.static("uploads")); // serve uplaoded file
 app.use("/api/files", fileRoutes)
+app.use("/api/text", textRoutes);
 // HOME ROUTE
 
 

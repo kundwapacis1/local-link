@@ -1,10 +1,26 @@
 import mongoose from "mongoose";
 
-const filesSchema = new mongoose.Schema({
-    filename: String,
-    path: String,
-    size: Number,
-    uploadDate: { type: Date, default: Date.now}
+const fileSchema = new mongoose.Schema({
+    filename: 
+    {
+        type: String,
+        required: true,
+    },
+    path: {
+        type: String,
+        required: true,
+    },
+    size: {
+        type: String,
+        required: true,
+    },
+    mimetype: {
+        type: String,
+        required: true
+    },
+    uploadDate: 
+    { type: Date, 
+        default: Date.now}
 });
 
 export default mongoose.model("File", fileSchema);
