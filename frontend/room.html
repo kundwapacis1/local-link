@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+  <title>Local Link Room</title>
+</head>
+<body>
+  <h1>Local Link Room</h1>
+
+  <div id="room-join">
+    <input type="text" id="roomInput" placeholder="Enter room name">
+    <button id="joinBtn">Join Room</button>
+  </div>
+
+  <div id="room-section" style="display:none;">
+    <h2 id="roomName"></h2>
+
+    <!-- File Upload -->
+    <input type="file" id="roomFileInput">
+    <button id="roomUploadBtn">Upload</button>
+    <ul id="roomFiles"></ul>
+
+    <!-- Text Share -->
+    <textarea id="roomTextInput" placeholder="Type a message"></textarea>
+    <button id="roomSendTextBtn">Send</button>
+    <ul id="roomTexts"></ul>
+  </div>
+
+  <script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
+  <script type="module" src="js/room.js"></script>
+</body>
+</html>

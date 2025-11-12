@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+  <title>Local Link</title>
+</head>
+<body>
+  <h1>Local Link - Share Files & Text</h1>
+
+  <!-- File Upload Section -->
+  <section id="file-upload">
+    <h2>Upload File</h2>
+    <input type="file" id="fileInput">
+    <button id="uploadBtn">Upload</button>
+    <p id="fileResult"></p>
+  </section>
+
+  <!-- Text Sharing Section -->
+  <section id="text-share">
+    <h2>Share Text</h2>
+    <textarea id="textInput" placeholder="Type your text here"></textarea>
+    <button id="saveTextBtn">Save Text</button>
+    <ul id="textList"></ul>
+  </section>
+
+  <!-- QR Code Display Section -->
+  <section id="qr-section">
+    <h2>QR Code</h2>
+    <canvas id="qrCanvas"></canvas>
+  </section>
+
+  <script src="js/qr-generator.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
